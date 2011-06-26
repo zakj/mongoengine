@@ -571,6 +571,9 @@ class GridFSProxy(object):
     def __get__(self, instance, value):
         return self
 
+    def __nonzero__(self):
+        return bool(self.grid_id)
+
     def get(self, id=None):
         if id:
             self.grid_id = id
